@@ -144,9 +144,9 @@ public class PopUpList extends Widget {
 			return null;
 		}
 	}
-	
-	
-	protected Rectangle getPreferredSize() {
+
+
+	public Rectangle getPreferredSize() {
 		return new Rectangle(2+getMaxLength(),1);
 	}
 	

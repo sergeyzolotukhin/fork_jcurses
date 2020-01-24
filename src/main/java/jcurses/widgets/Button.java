@@ -118,7 +118,7 @@ public class Button extends Widget {
 	
 	
 	
-	protected Rectangle getPreferredSize() {
+	public Rectangle getPreferredSize() {
 		return new Rectangle(_label.length()+4,1);
 	}
 	

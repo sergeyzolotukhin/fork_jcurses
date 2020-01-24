@@ -337,7 +337,7 @@ public class TextComponent extends Widget {
 	/**
 	 * Aus Widget
 	 */
-	protected Rectangle getPreferredSize() {
+	public Rectangle getPreferredSize() {
 		return new Rectangle(_width, _height);
 	}
 

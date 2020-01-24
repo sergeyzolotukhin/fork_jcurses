@@ -49,7 +49,7 @@ public class Label extends Widget {
 	}
 	
 	
-	protected Rectangle getPreferredSize() {
+	public Rectangle getPreferredSize() {
 		if (_label.indexOf("\n") == -1) {
 			return new Rectangle(_label.length(),1);
 		} else {

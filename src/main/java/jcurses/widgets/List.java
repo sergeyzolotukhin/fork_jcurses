@@ -383,7 +383,7 @@ public class List extends Widget implements IScrollable {
 	}
 
 
-	protected Rectangle getPreferredSize() {
+	public Rectangle getPreferredSize() {
 		return new Rectangle(-1, (_visibleSize < 0) ? -1 : _visibleSize + 2);
 	}
 

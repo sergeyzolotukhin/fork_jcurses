@@ -109,9 +109,9 @@ public class TextField extends TextComponent {
 							getAbsoluteY(),getDelimiterColors());
 		
 	}
-	
-	
-	protected Rectangle getPreferredSize() {
+
+
+	public Rectangle getPreferredSize() {
 		return new Rectangle(getWidth(), getHeight());
 	}
 	

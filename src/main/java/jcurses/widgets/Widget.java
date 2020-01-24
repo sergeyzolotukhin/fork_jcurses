@@ -85,7 +85,7 @@ public abstract class Widget {
     * 
     * @param x x coordinate within the container
     */
-	protected void setX(int x) {
+	public void setX(int x) {
 		_x=x;
 	}
 	
@@ -121,7 +121,7 @@ public abstract class Widget {
     * 
     * @param y y coordinate within the container
     */
-	protected void setY(int y) {
+	public void setY(int y) {
 		_y = y;
 	}
 	
@@ -169,7 +169,7 @@ public abstract class Widget {
     *  @return widget's size
     */
 	
-	protected Rectangle getSize() {
+	public Rectangle getSize() {
 		return (Rectangle)_size.clone();
 	}
 	
@@ -179,7 +179,7 @@ public abstract class Widget {
     * 
     * @param size new size
     */
-	protected void setSize(Rectangle size) {
+	public void setSize(Rectangle size) {
 		_size = size;
 		
 	}
@@ -190,7 +190,7 @@ public abstract class Widget {
     * preferred size of this widget. Must be implemented by derived classes.
 	*/
 	
-	protected abstract Rectangle getPreferredSize();
+	public abstract Rectangle getPreferredSize();
 	
 	
 	/**

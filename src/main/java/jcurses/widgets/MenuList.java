@@ -69,7 +69,7 @@ public class MenuList extends List {
 	}
 
 
-	protected Rectangle getPreferredSize() {
+	public Rectangle getPreferredSize() {
 		return new Rectangle(getMaxItemLength() + 2, getItemsCount() + 2);
 	}
 

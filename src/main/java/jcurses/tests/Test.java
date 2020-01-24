@@ -2,6 +2,7 @@ package jcurses.tests;
 
 
 
+import jcurses.layout.GridLayoutManager;
 import jcurses.system.*;
 
 import jcurses.widgets.*;

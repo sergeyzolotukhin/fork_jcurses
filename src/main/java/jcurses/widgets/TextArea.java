@@ -119,12 +119,12 @@ public class TextArea extends TextComponent implements IScrollable {
 	protected void refreshAdditionalThings() {
 		_scrollbars.refresh();
 	}
-	
-	
-	
-	
-	
-	protected Rectangle getPreferredSize() {
+
+
+
+
+
+	public Rectangle getPreferredSize() {
 		return new Rectangle(getWidth(), getHeight());
 	}
 	

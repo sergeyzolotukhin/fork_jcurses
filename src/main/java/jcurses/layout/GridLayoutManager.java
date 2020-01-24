@@ -1,6 +1,10 @@
-package jcurses.widgets;
+package jcurses.layout;
 
 import jcurses.util.Rectangle;
+import jcurses.widgets.LayoutManager;
+import jcurses.widgets.Widget;
+import jcurses.widgets.WidgetContainer;
+import jcurses.widgets.WidgetsConstants;
 
 /******************************************************
  * This class is a layout manager that works like as the <code>DefaultLayoutManager</code>

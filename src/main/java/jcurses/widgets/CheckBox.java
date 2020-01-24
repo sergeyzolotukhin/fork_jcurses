@@ -99,11 +99,7 @@ public class CheckBox extends Widget {
 		paint();
 	}
 	
-	
-	
-	
-	
-	protected Rectangle getPreferredSize() {
+	public Rectangle getPreferredSize() {
 		return new Rectangle(3,1);
 	}
 	

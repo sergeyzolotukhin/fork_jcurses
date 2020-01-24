@@ -43,7 +43,7 @@ public class Panel extends WidgetContainer {
 	}
 	
 	
-	protected Rectangle getPreferredSize() {
+	public Rectangle getPreferredSize() {
 		return _prefSize;
 	}
 	

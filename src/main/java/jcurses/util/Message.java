@@ -4,7 +4,7 @@ import jcurses.event.ActionEvent;
 import jcurses.event.ActionListener;
 import jcurses.widgets.Button;
 import jcurses.widgets.Label;
-import jcurses.widgets.DefaultLayoutManager;
+import jcurses.layout.DefaultLayoutManager;
 import jcurses.widgets.Dialog;
 import jcurses.widgets.WidgetsConstants;
 

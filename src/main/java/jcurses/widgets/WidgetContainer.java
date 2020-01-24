@@ -6,6 +6,7 @@
 
 package jcurses.widgets;
 
+import jcurses.layout.DefaultLayoutManager;
 import jcurses.system.Toolkit;
 import jcurses.util.Rectangle;
 
@@ -110,7 +111,7 @@ public abstract class WidgetContainer extends Widget {
 	 * @param constraint layouting constraints
 	 */
 
-	protected void addWidget(Widget widget, Object constraint) {
+	public void addWidget(Widget widget, Object constraint) {
 		_widgets.add(widget);
 		_constraints.put(widget, constraint);
 		widget.setParent(this);
@@ -127,7 +128,7 @@ public abstract class WidgetContainer extends Widget {
 	 */
 
 
-	protected void removeWidget(Widget widget) {
+	public void removeWidget(Widget widget) {
 		_widgets.remove(widget);
 		_constraints.remove(widget);
 		widget.setParent(null);
@@ -183,7 +184,7 @@ public abstract class WidgetContainer extends Widget {
 	 */
 
 
-	protected Rectangle getChildsRectangle() {
+	public Rectangle getChildsRectangle() {
 		return null;
 	}
 

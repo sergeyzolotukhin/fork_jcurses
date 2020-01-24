@@ -2,6 +2,7 @@ package jcurses.widgets;
 
 import jcurses.event.ItemEvent;
 import jcurses.event.ItemListener;
+import jcurses.layout.GridLayoutManager;
 
 /**
  * This class implements a popup menu window. Such windows can be used

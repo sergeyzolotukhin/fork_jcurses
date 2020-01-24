@@ -1,6 +1,10 @@
-package jcurses.widgets;
+package jcurses.layout;
 
 import jcurses.util.Rectangle;
+import jcurses.widgets.LayoutManager;
+import jcurses.widgets.Widget;
+import jcurses.widgets.WidgetContainer;
+import jcurses.widgets.WidgetsConstants;
 
 /**
  * This is a default layout manager. The constraints state for each widget
