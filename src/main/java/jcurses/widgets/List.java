@@ -771,7 +771,7 @@ public class List extends Widget implements IScrollable {
 	}
 
 
-	protected boolean isFocusable() {
+	public boolean isFocusable() {
 		return true;
 	}
 

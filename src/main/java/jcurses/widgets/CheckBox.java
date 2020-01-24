@@ -113,7 +113,7 @@ public class CheckBox extends Widget {
 	}
 	
 	
-	protected boolean isFocusable() {
+	public boolean isFocusable() {
 		return true;
 	}
 	

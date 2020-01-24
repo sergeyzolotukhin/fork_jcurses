@@ -191,9 +191,9 @@ public class PopUpList extends Widget {
 		CharColor colors = hasFocus()?getFocusedPopUpColors():getColors();
 		Toolkit.printString(text,rect, colors);
 	}
-	
-	
-	protected boolean isFocusable() {
+
+
+	public boolean isFocusable() {
 		return true;
 	}
 	

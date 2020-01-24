@@ -147,9 +147,9 @@ public class Button extends Widget {
 			}
 		}
 	}
-	
-	
-	protected  Vector getShortCutsList() {
+
+
+	public  Vector getShortCutsList() {
 		if (getShortCut() == null) {
 			return null;
 		}
@@ -157,9 +157,9 @@ public class Button extends Widget {
 		result.add(getShortCut());
 		return result;
 	}
-	
-	
-	protected boolean isFocusable() {
+
+
+	public boolean isFocusable() {
 		return true;
 	}
 	

@@ -1,9 +1,3 @@
-/**
- * Die Klasse ist die Root-Klasse aller Container-Klassen.
- * Ihre Aufgabe besteht darin eine Reihe von Widgets zu verwalten,
- * die Eingabe an Sie weitezuleiten etc
- */
-
 package jcurses.widgets.container;
 
 import jcurses.layout.DefaultLayoutManager;
@@ -94,7 +88,7 @@ public abstract class WidgetContainer extends Widget {
 	 * using containers layout manager. The method is called bei framework,
 	 * before it paints a window-
 	 */
-	protected void pack() {
+	public void pack() {
 		for (int i = 0; i < _widgets.size(); i++) {
 			Widget widget = (Widget) _widgets.elementAt(i);
 			packChild(widget, _constraints.get(widget));
@@ -143,7 +137,7 @@ public abstract class WidgetContainer extends Widget {
 	 * @return input widgets within container
 	 */
 
-	protected Vector getListOfFocusables() {
+	public Vector getListOfFocusables() {
 		Vector result = new Vector();
 		for (int i = 0; i < _widgets.size(); i++) {
 			Widget widget = (Widget) _widgets.elementAt(i);
@@ -165,7 +159,7 @@ public abstract class WidgetContainer extends Widget {
 	 * @return widgets within container, that can handle shortcuts
 	 */
 
-	protected Vector getListOfWidgetsWithShortCuts() {
+	public Vector getListOfWidgetsWithShortCuts() {
 		Vector result = new Vector();
 		for (int i = 0; i < _widgets.size(); i++) {
 			Widget widget = (Widget) _widgets.elementAt(i);
