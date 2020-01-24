@@ -7,6 +7,7 @@
 package jcurses.widgets;
 
 import jcurses.layout.DefaultLayoutManager;
+import jcurses.layout.LayoutManager;
 import jcurses.system.Toolkit;
 import jcurses.util.Rectangle;
 

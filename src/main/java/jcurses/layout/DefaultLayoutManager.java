@@ -1,7 +1,6 @@
 package jcurses.layout;
 
 import jcurses.util.Rectangle;
-import jcurses.widgets.LayoutManager;
 import jcurses.widgets.Widget;
 import jcurses.widgets.WidgetContainer;
 import jcurses.widgets.WidgetsConstants;

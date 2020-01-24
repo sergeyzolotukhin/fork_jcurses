@@ -1,4 +1,7 @@
-package jcurses.widgets;
+package jcurses.layout;
+
+import jcurses.widgets.Widget;
+import jcurses.widgets.WidgetContainer;
 
 /******************************************************
 * This interface must be implemented bei layout managers,
