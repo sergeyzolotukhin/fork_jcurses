@@ -259,11 +259,11 @@ public class Toolkit {
 	/**
 	 * The method draws a rectangle on the screen, filled with background part of <code>color</code>
 	 *
-	 * @param x       the x coordinate of the top left corner of the rectangle to be painted
-	 * @param y       the y coordinate of the top left corner of the rectangle to be painted
-	 * @param width   the width of the rectangle to be painted
-	 * @param heigtht the height of the rectangle to be painted
-	 * @param color   color to fill the rectangle, only background part is used
+	 * @param x      the x coordinate of the top left corner of the rectangle to be painted
+	 * @param y      the y coordinate of the top left corner of the rectangle to be painted
+	 * @param width  the width of the rectangle to be painted
+	 * @param height the height of the rectangle to be painted
+	 * @param color  color to fill the rectangle, only background part is used
 	 */
 	public static void drawRectangle(int x, int y, int width, int height, CharColor color) {
 		Rectangle rect = new Rectangle(x, y, width, height);
@@ -481,11 +481,11 @@ public class Toolkit {
 	/**
 	 * The method draws a border on the screen.
 	 *
-	 * @param x       the x coordinate of the top left corner of the border to be painted
-	 * @param y       the y coordinate of the top left corner of the border to be painted
-	 * @param width   the width of the border to be painted
-	 * @param heigtht the height of the border to be painted
-	 * @param color   color attributes of the border
+	 * @param x      the x coordinate of the top left corner of the border to be painted
+	 * @param y      the y coordinate of the top left corner of the border to be painted
+	 * @param width  the width of the border to be painted
+	 * @param height the height of the border to be painted
+	 * @param color  color attributes of the border
 	 */
 	public static void drawBorder(int x, int y, int width, int height, CharColor color) {
 		drawCorner(x + 1, y, x + width - 1, y + height - 2, color, CORNER_UNDER_LINE);
@@ -526,10 +526,10 @@ public class Toolkit {
 	/**
 	 * The method prints a string on the screen
 	 *
-	 * @param text      string to be printed
-	 * @param rectangle the rectangle, within which the string must lie. If the string
-	 *                  doesn't fit within the rectangle it will be broken.
-	 * @param colr      attributes of the string
+	 * @param text  string to be printed
+	 * @param rect  the rectangle, within which the string must lie. If the string
+	 *              doesn't fit within the rectangle it will be broken.
+	 * @param color attributes of the string
 	 */
 	public static void printString(String text, Rectangle rect, CharColor color) {
 		Rectangle clipRect = getCurrentClipRectangle();
@@ -671,8 +671,8 @@ public class Toolkit {
 	/**
 	 * The method change the background and the foreground colors of an given rectangle on the schreen
 	 *
-	 * @param rectangle rectangle, whose colors are to be changed
-	 * @param colors    new colors
+	 * @param rect  rectangle, whose colors are to be changed
+	 * @param color new colors
 	 */
 	public static void changeColors(Rectangle rect, CharColor color) {
 		Rectangle clipRect = getCurrentClipRectangle();
