@@ -26,7 +26,6 @@ import java.util.Vector;
  * window. If an window are created, it gets automatically to the top of the stack
  * and leaves the until an other window is created or explicitly brought to the top.
  */
-
 public class Window {
 
 	private Panel _root = null;
@@ -78,14 +77,6 @@ public class Window {
 		WindowManager.createWindow(this);
 	}
 
-
-	/**
-	 * The constructor. A window created with this constructor is centered on the screen.
-	 *
-	 * @param width  window's width
-	 * @param height window's height
-	 * @param border true, if the window has a border, false in other case
-	 */
 	public Window(int width, int height, boolean border, String title) {
 		this((Toolkit.getScreenWidth() - width) / 2, (Toolkit.getScreenHeight() - height) / 2, width, height, border, title);
 	}
@@ -111,28 +102,13 @@ public class Window {
 		_root.setY(y1);
 	}
 
-
-	/**
-	 * The method shows the window
-	 */
 	public void show() {
 		setVisible(true);
 	}
 
-	/**
-	 * The method hides the window
-	 */
-
 	public void hide() {
 		setVisible(false);
 	}
-
-
-	/**
-	 * The method changes the window's visibility status
-	 *
-	 * @param value true, if the window becomes visible, false in other case
-	 */
 
 	public void setVisible(boolean value) {
 		Window oldTop = WindowManager.getTopWindow();
@@ -146,39 +122,19 @@ public class Window {
 		}
 	}
 
-
-	/**
-	 * The method returns the window's visibility status
-	 *
-	 * @return true, if the window becomes visible, false in other case
-	 */
 	public boolean isVisible() {
 		return _visible;
 	}
-
-	/**
-	 * The method paint's the window
-	 */
 
 	public void paint() {
 		drawThingsIfNeeded();
 		_root.paint();
 	}
 
-
-	/**
-	 * Currently the method makes the same as repaint, in next versions the method
-	 * will repaint only the part of the window, that was hided.
-	 */
-
 	public void repaint() {
 		drawThingsIfNeeded();
 		_root.repaint();
 	}
-
-	/**
-	 * @return the rectangle occupied by the window
-	 */
 
 	public Rectangle getRectangle() {
 		return _rect;
@@ -188,7 +144,6 @@ public class Window {
 	 * The method closed the window, that is removes it from window stack an
 	 * evantually from screen, if it was visible.
 	 */
-
 	public void close() {
 		WindowManager.removeWindow(this);
 	}
@@ -197,7 +152,6 @@ public class Window {
 	/**
 	 * The method moves the window to the top of the stack
 	 */
-
 	public void moveToTheTop() {
 		WindowManager.moveToTop(this);
 	}
@@ -205,7 +159,6 @@ public class Window {
 	/**
 	 * Folgende Methoden bestimmen das zeichen das benutzt wird, um das Fenster zu schlie�en
 	 */
-
 	private static InputChar __defaultClosingChar = new InputChar(27);//escape character
 	private InputChar _closingChar = getDefaultClosingChar();
 
@@ -273,8 +226,6 @@ public class Window {
 	 * 3. Shortcut bearbeiten.
 	 * 3. Eingabe vom aktuell Fokus habenden Kind bearbeiten lassen.
 	 */
-
-
 	private boolean isShortCut(InputChar inp) {
 		return (_shortCutsList.indexOf(inp) != -1);
 	}
@@ -544,7 +495,6 @@ public class Window {
 	 * Sets the root panel of the window. This is the top most widget container in the
 	 * window's widget hierarchy. It occupies the entire window out of the border (if exists ).
 	 */
-
 	public void setRootPanel(Panel root) {
 		_root = root;
 		_root.setWindow(this);
@@ -567,7 +517,6 @@ public class Window {
 					_rect.getY() + _rect.getHeight(),
 					_rect.getWidth(),
 					1, getShadowColors());
-
 		}
 	}
 
@@ -609,7 +558,6 @@ public class Window {
 		return __defaultTitleColors;
 	}
 
-
 	public CharColor getTitleColors() {
 		return _titleColors;
 	}
@@ -619,15 +567,9 @@ public class Window {
 		_titleColors = colors;
 	}
 
-	/**
-	 * The method defines, whether the window is to paint with a shadow
-	 *
-	 * @param value true if a shadow is to paint, false in othe case
-	 */
 	public void setShadow(boolean value) {
 		_hasShadow = value;
 	}
-
 
 	public boolean hasShadow() {
 		return _hasShadow;
@@ -645,21 +587,10 @@ public class Window {
 
 	private WindowListenerManager _listenerManager = new WindowListenerManager();
 
-	/**
-	 * The method adds a listener to the window
-	 *
-	 * @param listener the listener to add
-	 */
 	public void addListener(WindowListener listener) {
 		_listenerManager.addListener(listener);
 	}
 
-
-	/**
-	 * The method remove a listener from the window
-	 *
-	 * @param listener the listener to remove
-	 */
 	public void removeListener(WindowListener listener) {
 		_listenerManager.removeListener(listener);
 	}
@@ -693,84 +624,4 @@ public class Window {
 		_rect.setWidth(width);
 		_rect.setHeight(height);
 	}
-
-
-}
-
-
-class WindowWidgetComparator implements Comparator {
-
-
-	// methods to compare widget positions
-	static boolean toTheLeftOf(Widget widget1, Widget widget2) {
-		Rectangle rect1 = widget1.getRectangle();
-		Rectangle rect2 = widget2.getRectangle();
-		boolean result = ((rect1.getX() + rect1.getWidth() - 1) < rect2.getX());
-		return result;
-	}
-
-
-	static boolean toTheRightOf(Widget widget1, Widget widget2) {
-		Rectangle rect1 = widget1.getRectangle();
-		Rectangle rect2 = widget2.getRectangle();
-		boolean result = ((rect1.getX()) > (rect2.getX() + rect2.getWidth() - 1));
-		return result;
-	}
-
-	static boolean atTheTopOf(Widget widget1, Widget widget2) {
-		Rectangle rect1 = widget1.getRectangle();
-		Rectangle rect2 = widget2.getRectangle();
-		boolean result = ((rect1.getY() + rect1.getHeight() - 1) < rect2.getY());
-		return result;
-	}
-
-	static boolean atTheBottomOf(Widget widget1, Widget widget2) {
-		Rectangle rect1 = widget1.getRectangle();
-		Rectangle rect2 = widget2.getRectangle();
-		boolean result = ((rect1.getY()) > (rect2.getY() + rect2.getHeight() - 1));
-		return result;
-	}
-
-	static int getDistance(Widget widget1, Widget widget2) {
-		Rectangle rect1 = widget1.getRectangle();
-		Rectangle rect2 = widget2.getRectangle();
-		int x1 = rect1.getX() + (rect1.getWidth() / 2);
-		int y1 = rect1.getY() + (rect1.getHeight() / 2);
-		int x2 = rect2.getX() + (rect2.getWidth() / 2);
-		int y2 = rect2.getY() + (rect2.getHeight() / 2);
-
-		return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
-
-	}
-
-
-	public int compare(Object obj1, Object obj2) {
-		if ((!(obj1 instanceof Widget)) || (!(obj2 instanceof Widget))) {
-			throw new RuntimeException("unknown classes to compare");
-		}
-
-		Widget widget1 = (Widget) obj1;
-		Widget widget2 = (Widget) obj2;
-
-		int result = 0;
-
-		if (atTheTopOf(widget1, widget2)) {
-			result = -1;
-		} else if (atTheBottomOf(widget1, widget2)) {
-			result = 1;
-		} else {
-			if (toTheLeftOf(widget1, widget2)) {
-				result = -1;
-			} else if (toTheRightOf(widget1, widget2)) {
-				result = 1;
-			} else {
-				result = 0;
-			}
-		}
-
-
-		return result;
-
-	}
-
 }
