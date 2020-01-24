@@ -17,7 +17,7 @@ import jcurses.widgets.*;
 import jcurses.util.*;
 
 import jcurses.event.*;
-import jcurses.widgets.window.FileDialog;
+import jcurses.widgets.window.file.FileDialog;
 import jcurses.widgets.window.Message;
 import jcurses.widgets.window.Window;
 
@@ -28,8 +28,6 @@ public class Test extends Window implements ItemListener, ActionListener, ValueC
 		//Protocol initialisieren
 		System.setProperty("jcurses.protocol.filename", "jcurses.log");
 
-		Protocol.activateChannel(Protocol.DEBUG);
-		Protocol.debug("Programm beginnt");
 
 		/*FileOutputStream stream = new FileOutputStream("test.txt");
 		OutputStreamWriter writer = new OutputStreamWriter(stream,"Cp850");
@@ -106,17 +104,13 @@ public class Test extends Window implements ItemListener, ActionListener, ValueC
 	public void actionPerformed(ActionEvent event) {
 		Widget w = event.getSource();
 		if (w == _b1) {
-			Protocol.debug("point1");
 			FileDialog dial = new FileDialog("File w�hlen");
-			Protocol.debug("point2");
 			dial.show();
 
-			Protocol.debug("point3");
 			if (dial.getChoosedFile() != null) {
 				new Message("Meldung!", dial.getChoosedFile().getAbsolutePath() + "", "OK").show();
 			}
 
-			Protocol.debug("point4");
 			_pass.setVisible(!_pass.isVisible());
 
 			pack();
@@ -141,7 +135,6 @@ public class Test extends Window implements ItemListener, ActionListener, ValueC
 
 
 	public void stateChanged(ItemEvent e) {
-		Protocol.debug("-----------------");
 		new Message("meldung", e.getItem() + ":" + e.getType(), "OK").show();
 	}
 
@@ -152,7 +145,6 @@ public class Test extends Window implements ItemListener, ActionListener, ValueC
 
 
 	public void windowChanged(WindowEvent event) {
-		Protocol.debug("window event: " + event.getType());
 		if (event.getType() == WindowEvent.CLOSING) {
 			event.getSourceWindow().close();
 		}

@@ -3,8 +3,8 @@ package jcurses.widgets.component.text;
 import jcurses.system.CharColor;
 import jcurses.system.Toolkit;
 import jcurses.util.Rectangle;
-import jcurses.widgets.IScrollable;
-import jcurses.widgets.ScrollbarPainter;
+import jcurses.scroll.IScrollable;
+import jcurses.scroll.ScrollbarPainter;
 
 /**
  * This class implements a text area to edit a text with meny lines

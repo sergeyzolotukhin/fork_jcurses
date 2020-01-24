@@ -1,4 +1,4 @@
-package jcurses.widgets;
+package jcurses.widgets.window.file;
 
 import java.io.File;
 import java.io.FileFilter;

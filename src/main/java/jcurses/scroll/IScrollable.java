@@ -1,4 +1,4 @@
-package jcurses.widgets;
+package jcurses.scroll;
 
 import jcurses.util.Rectangle;
 import jcurses.system.CharColor;

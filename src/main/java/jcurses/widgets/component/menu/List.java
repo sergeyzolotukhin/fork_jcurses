@@ -15,8 +15,8 @@ import jcurses.system.Toolkit;
 import jcurses.util.Rectangle;
 
 import jcurses.util.Paging;
-import jcurses.widgets.IScrollable;
-import jcurses.widgets.ScrollbarPainter;
+import jcurses.scroll.IScrollable;
+import jcurses.scroll.ScrollbarPainter;
 import jcurses.widgets.Widget;
 
 /**
