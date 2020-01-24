@@ -3,6 +3,11 @@ package jcurses.system;
 import jcurses.util.Rectangle;
 
 import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
@@ -94,36 +99,10 @@ public class Toolkit {
 	}
 
 	private static String getLibraryPath() {
-		String url = ClassLoader.getSystemClassLoader().getResource("jcurses/system/Toolkit.class").toString();
+		Path path = Paths.get(".", "libjcurses64.dll");
+		System.out.println("PATH:" + path.toAbsolutePath());
 
-		System.out.println("URL:" + url);
-
-		url = url.trim();
-		if (url.startsWith("jar:file:")) {
-			url = url.substring("jar:file:".length(), url.length());
-			url = url.substring(0, url.length() - "/jcurses.jar!/jcurses/system/Toolkit.class".length());
-		} else if (url.startsWith("file:")) {
-			url = url.substring("file:".length(), url.length());
-			url = url.substring(0, url.length() - "/classes/jcurses/system/Toolkit.class".length());
-			url = new File(url, "lib").getAbsolutePath();
-		} else {
-			throw new RuntimeException("couldn't find jcurses library");
-		}
-		String[] fileNames = new File(url).list();
-		boolean found = false;
-		for (int i = 0; i < fileNames.length; i++) {
-			String name = fileNames[i];
-			if (name.trim().startsWith("libjcurses")) {
-				url = new File(url, name).getAbsolutePath();
-				found = true;
-				break;
-			}
-
-		}
-		if (!found) {
-			throw new RuntimeException("couldn't find jcurses library");
-		}
-		return url;
+		return path.toAbsolutePath().toString();
 	}
 
 	private static void fillColorPairs() {
