@@ -2,11 +2,9 @@ package jcurses.widgets.window;
 
 import jcurses.util.Rectangle;
 import jcurses.widgets.Widget;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.Comparator;
 
-@Slf4j
 public class WindowWidgetComparator implements Comparator {
 
 	// methods to compare widget positions
