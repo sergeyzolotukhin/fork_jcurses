@@ -1,4 +1,4 @@
-package jcurses.widgets;
+package jcurses.widgets.component.menu;
 
 import jcurses.system.InputChar;
 import jcurses.util.Rectangle;

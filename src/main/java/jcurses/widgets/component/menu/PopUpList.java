@@ -1,14 +1,13 @@
-package jcurses.widgets;
+package jcurses.widgets.component.menu;
 
-import jcurses.event.ValueChangedListenerManager;
-import jcurses.event.ValueChangedListener;
 import jcurses.event.ValueChangedEvent;
-
+import jcurses.event.ValueChangedListener;
+import jcurses.event.ValueChangedListenerManager;
 import jcurses.system.CharColor;
 import jcurses.system.InputChar;
 import jcurses.system.Toolkit;
-
 import jcurses.util.Rectangle;
+import jcurses.widgets.Widget;
 
 import java.util.Vector;
 

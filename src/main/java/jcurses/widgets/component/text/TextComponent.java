@@ -1,4 +1,4 @@
-package jcurses.widgets;
+package jcurses.widgets.component.text;
 
 
 import java.util.ArrayList;
@@ -11,6 +11,7 @@ import jcurses.system.CharColor;
 import jcurses.system.InputChar;
 import jcurses.util.Rectangle;
 import jcurses.util.Paging;
+import jcurses.widgets.Widget;
 
 /**
  * The class is the superclass for text editing widgets

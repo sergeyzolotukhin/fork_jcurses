@@ -1,5 +1,5 @@
 
-package jcurses.widgets;
+package jcurses.widgets.component.menu;
 
 
 import java.util.Vector;
@@ -15,6 +15,9 @@ import jcurses.system.Toolkit;
 import jcurses.util.Rectangle;
 
 import jcurses.util.Paging;
+import jcurses.widgets.IScrollable;
+import jcurses.widgets.ScrollbarPainter;
+import jcurses.widgets.Widget;
 
 /**
  * This class implements a list widget to select and 'invoke' one ore more items.

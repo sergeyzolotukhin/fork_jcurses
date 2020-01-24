@@ -1,8 +1,9 @@
-package jcurses.widgets;
+package jcurses.widgets.component.menu;
 
 import jcurses.event.ItemEvent;
 import jcurses.event.ItemListener;
 import jcurses.layout.GridLayoutManager;
+import jcurses.widgets.WidgetsConstants;
 import jcurses.widgets.window.Dialog;
 
 /**

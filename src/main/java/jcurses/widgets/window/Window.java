@@ -2,7 +2,6 @@ package jcurses.widgets.window;
 
 
 import jcurses.widgets.Widget;
-import jcurses.widgets.WindowManager;
 import jcurses.widgets.container.Panel;
 import jcurses.event.WindowEvent;
 import jcurses.event.WindowListener;

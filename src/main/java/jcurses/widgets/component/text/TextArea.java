@@ -1,133 +1,127 @@
-package jcurses.widgets;
+package jcurses.widgets.component.text;
 
 import jcurses.system.CharColor;
 import jcurses.system.Toolkit;
 import jcurses.util.Rectangle;
+import jcurses.widgets.IScrollable;
+import jcurses.widgets.ScrollbarPainter;
 
 /**
-*  This class implements a text area to edit a text with meny lines
-*/
+ * This class implements a text area to edit a text with meny lines
+ */
 public class TextArea extends TextComponent implements IScrollable {
-	
-	private ScrollbarPainter _scrollbars = null; 
-	
+
+	private ScrollbarPainter _scrollbars = null;
+
 	/**
-	*  The constructor
-    * 
-    * @param width the preferred width of the component. If -1 is stated,
-    * there is no preferred width and the component is layouted dependend on the
-    * container and the text
-    *  @param height the preferred height of the component. If -1 is stated,
-    * there is no preferred width and the component is layouted dependend on the
-    * container.
-    * @text the initial text, if <code>null<code> the component is empty
-    * 
-	*/
-	public TextArea(int width, int height,String text) {
-		super(width,height,text);
+	 * The constructor
+	 *
+	 * @param width  the preferred width of the component. If -1 is stated,
+	 *               there is no preferred width and the component is layouted dependend on the
+	 *               container and the text
+	 * @param height the preferred height of the component. If -1 is stated,
+	 *               there is no preferred width and the component is layouted dependend on the
+	 *               container.
+	 * @text the initial text, if <code>null<code> the component is empty
+	 */
+	public TextArea(int width, int height, String text) {
+		super(width, height, text);
 		_scrollbars = new ScrollbarPainter(this);
 	}
-	
+
 	/**
-	*  The constructor
-    * 
-    * @param width the preferred width of the component. If -1 is stated,
-    * there is no preferred width and the component is layouted dependend on the
-    * container and the text
-    *  @param height the preferred height of the component. If -1 is stated,
-    * there is no preferred width and the component is layouted dependend on the
-    * container.
-    * 
-	*/
-	public  TextArea(int width, int height) {
-		this(width,height,null);
+	 * The constructor
+	 *
+	 * @param width  the preferred width of the component. If -1 is stated,
+	 *               there is no preferred width and the component is layouted dependend on the
+	 *               container and the text
+	 * @param height the preferred height of the component. If -1 is stated,
+	 *               there is no preferred width and the component is layouted dependend on the
+	 *               container.
+	 */
+	public TextArea(int width, int height) {
+		this(width, height, null);
 	}
-	
+
 	/**
-	* Constructor without arguments
-	*/
-	
+	 * Constructor without arguments
+	 */
+
 	public TextArea() {
 		this(-1, -1);
 	}
-	
-	
-	
-	
-	
-	private static CharColor __borderDefaultColors = new CharColor(CharColor.WHITE, CharColor.BLACK,CharColor.NORMAL);
-	
+
+
+	private static CharColor __borderDefaultColors = new CharColor(CharColor.WHITE, CharColor.BLACK, CharColor.NORMAL);
+
 	private CharColor _borderColors = getBorderDefaultColors();
-	
+
 	public CharColor getBorderDefaultColors() {
 		return __borderDefaultColors;
 	}
-	
-	
+
+
 	public CharColor getBorderColors() {
 		return _borderColors;
 	}
-	
-	
+
+
 	public void setBorderColors(CharColor colors) {
 		_borderColors = colors;
 	}
-	
-	
-	private static CharColor __scrollbarDefaultColors = new CharColor(CharColor.BLACK, CharColor.WHITE,CharColor.REVERSE);
-	
+
+
+	private static CharColor __scrollbarDefaultColors = new CharColor(CharColor.BLACK, CharColor.WHITE, CharColor.REVERSE);
+
 	private CharColor _scrollbarColors = getScrollbarDefaultColors();
-	
+
 	public CharColor getScrollbarDefaultColors() {
 		return __scrollbarDefaultColors;
 	}
-	
-	
+
+
 	public CharColor getScrollbarColors() {
 		return _scrollbarColors;
 	}
-	
-	
+
+
 	public void setScrollbarColors(CharColor colors) {
 		_scrollbarColors = colors;
 	}
-	
-	
+
+
 	protected Rectangle getTextRectangle() {
-		Rectangle result = (Rectangle)getSize().clone();
-		result.setLocation(getAbsoluteX()+1,getAbsoluteY()+1);
-		result.setWidth(result.getWidth()-2);
-		result.setHeight(result.getHeight()-2);
-		
+		Rectangle result = (Rectangle) getSize().clone();
+		result.setLocation(getAbsoluteX() + 1, getAbsoluteY() + 1);
+		result.setWidth(result.getWidth() - 2);
+		result.setHeight(result.getHeight() - 2);
+
 		return result;
 	}
-	
-	
+
+
 	protected void doPaint() {
 		super.doPaint();
 		Toolkit.drawBorder(getBorderRectangle(), getBorderColors());
 		drawAdditionalThings();
-		
+
 	}
-	
-	
+
+
 	protected void drawAdditionalThings() {
 		_scrollbars.paint();
 	}
-	
-	
+
+
 	protected void refreshAdditionalThings() {
 		_scrollbars.refresh();
 	}
 
 
-
-
-
 	public Rectangle getPreferredSize() {
 		return new Rectangle(getWidth(), getHeight());
 	}
-	
+
 	//Scrollbars
 	
 	/*private void drawVerticalScrollbar() {
@@ -166,67 +160,64 @@ public class TextArea extends TextComponent implements IScrollable {
 		
 		
 	}*/
-	
+
 	private int getVisibleTextWidth() {
-		return getSize().getWidth()-2;
+		return getSize().getWidth() - 2;
 	}
-	
-	
+
+
 	private int getVisibleTextHeight() {
-		return getSize().getHeight()-2;
+		return getSize().getHeight() - 2;
 	}
-	
-	
+
+
 	public boolean hasHorizontalScrollbar() {
 		return true;
 	}
-	
+
 
 	public boolean hasVerticalScrollbar() {
 		return true;
 	}
-	
-	
-	
+
+
 	public Rectangle getBorderRectangle() {
-		Rectangle rect = (Rectangle)getSize().clone();
+		Rectangle rect = (Rectangle) getSize().clone();
 		rect.setLocation(getAbsoluteX(), getAbsoluteY());
 		return rect;
 	}
-	
-	
-	
+
+
 	public float getHorizontalScrollbarOffset() {
-		if (!((getTextWidth()>0) &&(getTextWidth() > getVisibleTextWidth()))) {
+		if (!((getTextWidth() > 0) && (getTextWidth() > getVisibleTextWidth()))) {
 			return 0;
 		}
-		return ((float)getTextX())/((float)getTextWidth());
+		return ((float) getTextX()) / ((float) getTextWidth());
 	}
-	
-	
+
+
 	public float getHorizontalScrollbarLength() {
-	  if (!((getTextWidth()>0) &&(getTextWidth() > getVisibleTextWidth()))) {
+		if (!((getTextWidth() > 0) && (getTextWidth() > getVisibleTextWidth()))) {
 			return 0;
-	  }
-	  return ((float)getVisibleTextWidth())/((float)getTextWidth());
+		}
+		return ((float) getVisibleTextWidth()) / ((float) getTextWidth());
 	}
-	
-	
+
+
 	public float getVerticalScrollbarOffset() {
-		if (!((getTextHeight()>0) &&(getTextHeight() > getVisibleTextHeight()))) {
+		if (!((getTextHeight() > 0) && (getTextHeight() > getVisibleTextHeight()))) {
 			return 0;
 		}
-		return ((float)getTextY())/((float)getTextHeight());
+		return ((float) getTextY()) / ((float) getTextHeight());
 	}
-	
-	
+
+
 	public float getVerticalScrollbarLength() {
-		if (!((getTextHeight()>0) &&(getTextHeight() > getVisibleTextHeight()))) {
+		if (!((getTextHeight() > 0) && (getTextHeight() > getVisibleTextHeight()))) {
 			return 0;
 		}
-		return ((float)getVisibleTextHeight())/((float)getTextHeight());
+		return ((float) getVisibleTextHeight()) / ((float) getTextHeight());
 	}
-	
-	
+
 
 }

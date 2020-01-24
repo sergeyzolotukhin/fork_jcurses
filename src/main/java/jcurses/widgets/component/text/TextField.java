@@ -1,4 +1,4 @@
-package jcurses.widgets;
+package jcurses.widgets.component.text;
 
 import jcurses.system.InputChar;
 import jcurses.system.CharColor;

@@ -2,8 +2,8 @@ package jcurses.widgets.window;
 
 import jcurses.event.ActionEvent;
 import jcurses.event.ActionListener;
-import jcurses.widgets.Button;
-import jcurses.widgets.Label;
+import jcurses.widgets.component.Button;
+import jcurses.widgets.component.Label;
 import jcurses.layout.DefaultLayoutManager;
 import jcurses.widgets.WidgetsConstants;
 

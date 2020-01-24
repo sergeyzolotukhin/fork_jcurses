@@ -2,8 +2,6 @@ package jcurses.widgets.window;
 
 import jcurses.event.WindowEvent;
 import jcurses.event.WindowListener;
-import jcurses.widgets.WindowManager;
-import jcurses.widgets.WindowManagerBlockingCondition;
 
 /**
  * This class implements a modal dialog. The diffirence to a normal window is, that

@@ -1,4 +1,4 @@
-package jcurses.widgets;
+package jcurses.widgets.component.text;
 
 /**
  * Title:        JCurses

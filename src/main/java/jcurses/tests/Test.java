@@ -1,6 +1,13 @@
 package jcurses.tests;
 
 
+import jcurses.widgets.component.Button;
+import jcurses.widgets.component.CheckBox;
+import jcurses.widgets.component.Label;
+import jcurses.widgets.component.text.PasswordField;
+import jcurses.widgets.component.text.TextArea;
+import jcurses.widgets.component.menu.List;
+import jcurses.widgets.component.menu.PopUpMenu;
 import jcurses.widgets.container.BorderPanel;
 import jcurses.layout.GridLayoutManager;
 import jcurses.system.*;
