@@ -35,9 +35,7 @@ public class DefaultLayoutManager implements LayoutManager, WidgetsConstants {
 
 		int prefWidth = prefSize.getWidth();
 		int prefHeight = prefSize.getHeight();
-		/**
-		 *  Negativ oder 0 bedeutet, da� keine bevorzugte Gr�sse angegeben wurde
-		 */
+
 		if (prefWidth <= 0) {
 			prefWidth = cstr.width;
 		}
@@ -46,8 +44,8 @@ public class DefaultLayoutManager implements LayoutManager, WidgetsConstants {
 			prefHeight = cstr.height;
 		}
 
-		int width = 0;
-		int height = 0;
+		int width;
+		int height;
 
 		if (prefWidth < cstr.width) {
 			widget.setX(getAlignedCoordinate(prefWidth, cstr.width, cstr.x, cstr.horizontalConstraint));
@@ -71,8 +69,6 @@ public class DefaultLayoutManager implements LayoutManager, WidgetsConstants {
 
 
 	private int getAlignedCoordinate(int prefG, int contG, int contC, int alignment) {
-
-
 		if (alignment == ALIGNMENT_CENTER) {
 			alignment = 0;
 		} else if ((alignment == ALIGNMENT_BOTTOM) || (alignment == ALIGNMENT_RIGHT)) {
@@ -81,7 +77,7 @@ public class DefaultLayoutManager implements LayoutManager, WidgetsConstants {
 			alignment = 2;
 		}
 
-		int result = 0;
+		int result;
 		if (alignment == 2) {
 			result = contC;
 		} else if (alignment == 1) {
@@ -89,6 +85,7 @@ public class DefaultLayoutManager implements LayoutManager, WidgetsConstants {
 		} else {
 			result = contC + (contG - prefG) / 2;
 		}
+
 		return result;
 	}
 
@@ -127,13 +124,12 @@ public class DefaultLayoutManager implements LayoutManager, WidgetsConstants {
 
 
 class DefaultLayoutConstraint {
-
-	int x = 0;
-	int y = 0;
-	int width = 0;
-	int height = 0;
-	int horizontalConstraint = 0;
-	int verticalConstraint = 0;
+	int x;
+	int y;
+	int width;
+	int height;
+	int horizontalConstraint;
+	int verticalConstraint;
 
 	DefaultLayoutConstraint(int x, int y, int width, int height, int horizontalConstraint, int verticalConstraint) {
 		this.x = x;
@@ -143,6 +139,4 @@ class DefaultLayoutConstraint {
 		this.horizontalConstraint = horizontalConstraint;
 		this.verticalConstraint = verticalConstraint;
 	}
-
-
 }

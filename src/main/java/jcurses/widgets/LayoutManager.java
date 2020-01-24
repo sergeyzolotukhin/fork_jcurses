@@ -14,7 +14,7 @@ public interface LayoutManager {
     * @param child widget to layout
     * @param constraints layouting constraints
 	*/
-   public abstract void layout(Widget child, Object constraints);
+	void layout(Widget child, Object constraints);
 	
 	/**
 	*  The method is called by framework by binding the layout manager
@@ -25,7 +25,7 @@ public interface LayoutManager {
     * 
     * @param container container to bind
 	*/
-	public abstract void bindToContainer(WidgetContainer container);
+	void bindToContainer(WidgetContainer container);
 	
 	/**
 	* The method is called by framework by unbinding the layout manager
@@ -35,9 +35,6 @@ public interface LayoutManager {
     * to one container at a time.
     *
 	*/
-	
-	public abstract void unbindFromContainer();
-    
-	
 
+	void unbindFromContainer();
 }

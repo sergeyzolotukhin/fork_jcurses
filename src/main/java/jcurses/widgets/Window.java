@@ -34,10 +34,10 @@ public class Window {
 
 	private boolean _visible = false;
 
-	private Rectangle _rect = null;
+	private Rectangle _rect;
 
-	private boolean _border = false;
-	private String _title = null;
+	private boolean _border;
+	private String _title;
 
 	private boolean _hasShadow = true;
 
@@ -106,7 +106,6 @@ public class Window {
 		_root.setSize(new Rectangle(w, h));
 		_root.setX(x1);
 		_root.setY(y1);
-
 	}
 
 
@@ -512,14 +511,12 @@ public class Window {
 		_root.pack();
 		loadFocusableChilds();
 		loadShortcuts();
-
 	}
 
 
 	private void cutIfNeeded() {
 		int maxWidth = Toolkit.getScreenWidth() - _rect.getX() - (_hasShadow ? 1 : 0);
 		int maxHeight = Toolkit.getScreenHeight() - _rect.getY() - (_hasShadow ? 1 : 0);
-
 
 		if (_rect.getWidth() > maxWidth) {
 			_rect.setWidth(maxWidth);
@@ -528,8 +525,6 @@ public class Window {
 		if (_rect.getHeight() > maxHeight) {
 			_rect.setHeight(maxHeight);
 		}
-
-
 	}
 
 

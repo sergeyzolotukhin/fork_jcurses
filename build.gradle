@@ -1,18 +1,18 @@
 plugins {
     id 'java'
-    id 'distribution'
+    id 'maven'
 }
 
-group = 'ua.in.sz.learn'
-version = '0.0.1-SNAPSHOT'
+group = 'ua.in.szolotukhin.jcurses'
+version = '0.0.1'
 sourceCompatibility = '1.8'
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-
     compileOnly 'org.projectlombok:lombok:1.18.10'
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
 
@@ -22,4 +22,9 @@ dependencies {
 
 java {
     withSourcesJar()
+}
+
+artifacts {
+    archives jar
+    archives sourcesJar
 }
