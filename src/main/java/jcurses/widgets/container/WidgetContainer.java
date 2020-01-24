@@ -4,12 +4,13 @@
  * die Eingabe an Sie weitezuleiten etc
  */
 
-package jcurses.widgets;
+package jcurses.widgets.container;
 
 import jcurses.layout.DefaultLayoutManager;
 import jcurses.layout.LayoutManager;
 import jcurses.system.Toolkit;
 import jcurses.util.Rectangle;
+import jcurses.widgets.Widget;
 
 
 import java.util.Hashtable;

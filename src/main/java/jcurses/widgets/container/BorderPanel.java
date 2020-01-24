@@ -1,4 +1,4 @@
-package jcurses.widgets;
+package jcurses.widgets.container;
 
 import jcurses.system.CharColor;
 import jcurses.system.Toolkit;
@@ -11,11 +11,9 @@ public class BorderPanel extends Panel {
 	private CharColor _colors = getDefaultBorderColors();
 	private static CharColor __defaultBorderColors = new CharColor(CharColor.WHITE, CharColor.BLACK);
 
-
 	public BorderPanel() {
 		super();
 	}
-
 
 	public BorderPanel(int width, int height) {
 		super(width, height);
@@ -25,7 +23,6 @@ public class BorderPanel extends Panel {
 		super.paintSelf();
 		Toolkit.drawBorder(getRectangle(), getBorderColors());
 	}
-
 
 	protected void repaintSelf() {
 		super.repaintSelf();

@@ -1,6 +1,7 @@
 package jcurses.tests;
 
 
+import jcurses.widgets.container.BorderPanel;
 import jcurses.layout.GridLayoutManager;
 import jcurses.system.*;
 
