@@ -104,7 +104,9 @@ public class DefaultLayoutManager implements LayoutManager, WidgetsConstants {
 	 *                             * <code>WidgetConstraints.ALIGNMENT_CENTER</code>,<code>WidgetConstraints.ALIGNMENT_LEFT</code>,<code>WidgetConstraints.ALIGNMENT_RIGHT</code>
 	 */
 
-	public void addWidget(Widget widget, int x, int y, int width, int height, int verticalConstraint, int horizontalConstraint) {
+	public void addWidget(Widget widget, int x, int y, int width, int height,
+						  int verticalConstraint, int horizontalConstraint
+	) {
 		_father.addWidget(widget,
 				new DefaultLayoutConstraint(x, y, width, height, horizontalConstraint, verticalConstraint));
 	}
