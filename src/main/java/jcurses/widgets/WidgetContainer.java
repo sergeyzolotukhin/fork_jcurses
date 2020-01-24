@@ -17,6 +17,7 @@ import java.util.Vector;
 *  This class is a superclass for widget containers,
 * that is, for widgets, that can contain other widgets
 */
+@SuppressWarnings("unchecked")
 public abstract class WidgetContainer extends Widget {
 	
 	
@@ -108,7 +109,7 @@ public abstract class WidgetContainer extends Widget {
     * a widget to the container, a developer must use methods of container's layout manager.
     * 
     * @param widget widget to add
-    * @constraint layouting constraints
+    * @param constraint layouting constraints
 	*/
 	
 	protected void addWidget(Widget widget, Object constraint) {
