@@ -4,6 +4,7 @@ import jcurses.widgets.container.WidgetContainer;
 import jcurses.system.CharColor;
 import jcurses.system.InputChar;
 import jcurses.util.Rectangle;
+import jcurses.widgets.window.Window;
 
 import java.util.Vector;
 
@@ -53,7 +54,7 @@ public abstract class Widget {
 	 *
 	 * @param window widget's window
 	 */
-	protected void setWindow(Window window) {
+	public void setWindow(Window window) {
 		_window = window;
 	}
 
@@ -151,7 +152,7 @@ public abstract class Widget {
 	 *
 	 * @return the rectangle on the screen, that contains this widget
 	 */
-	protected Rectangle getRectangle() {
+	public Rectangle getRectangle() {
 		Rectangle size = (Rectangle) getSize().clone();
 		size.setLocation(getAbsoluteX(), getAbsoluteY());
 		return size;
@@ -258,7 +259,7 @@ public abstract class Widget {
 	 * @param value true, if the widget has get focus, in other case false
 	 */
 
-	void setFocus(boolean value) {
+	public void setFocus(boolean value) {
 		_focus = value;
 		if (_focus) {
 			focus();
@@ -294,7 +295,7 @@ public abstract class Widget {
 	 * @return true, if the widget has handled the char, false in other case
 	 */
 
-	protected boolean handleInput(InputChar inputChar) {
+	public boolean handleInput(InputChar inputChar) {
 		return false;
 	}
 

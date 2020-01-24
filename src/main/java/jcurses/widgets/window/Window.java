@@ -1,6 +1,8 @@
-package jcurses.widgets;
+package jcurses.widgets.window;
 
 
+import jcurses.widgets.Widget;
+import jcurses.widgets.WindowManager;
 import jcurses.widgets.container.Panel;
 import jcurses.event.WindowEvent;
 import jcurses.event.WindowListener;
@@ -159,7 +161,7 @@ public class Window {
 	 * The method paint's the window
 	 */
 
-	protected void paint() {
+	public void paint() {
 		drawThingsIfNeeded();
 		_root.paint();
 	}
@@ -170,7 +172,7 @@ public class Window {
 	 * will repaint only the part of the window, that was hided.
 	 */
 
-	protected void repaint() {
+	public void repaint() {
 		drawThingsIfNeeded();
 		_root.repaint();
 	}
@@ -179,7 +181,7 @@ public class Window {
 	 * @return the rectangle occupied by the window
 	 */
 
-	protected Rectangle getRectangle() {
+	public Rectangle getRectangle() {
 		return _rect;
 	}
 
@@ -320,7 +322,7 @@ public class Window {
 	/**
 	 * The method is called by the libray to handle an input character, if the window has the focus.
 	 */
-	protected void handleInput(InputChar inp) {
+	public void handleInput(InputChar inp) {
 		if (inp.equals(getClosingChar())) {
 			tryToClose();
 		} else if (inp.equals(getFocusChangeChar())) {
@@ -439,7 +441,7 @@ public class Window {
 	}
 
 
-	void changeFocus(Widget widget) {
+	public void changeFocus(Widget widget) {
 		int newIndex = _focusableChilds.indexOf(widget);
 		if (newIndex != -1) {
 			if (_currentIndex == -1) {
@@ -628,7 +630,7 @@ public class Window {
 	}
 
 
-	boolean hasShadow() {
+	public boolean hasShadow() {
 		return _hasShadow;
 	}
 
@@ -667,7 +669,7 @@ public class Window {
 	/**
 	 * The method is called, if the window gets focus.
 	 */
-	protected void activate() {
+	public void activate() {
 		_listenerManager.handleEvent(new WindowEvent(this, WindowEvent.ACTIVATED));
 	}
 
@@ -675,14 +677,14 @@ public class Window {
 	/**
 	 * The method is called, if the window loses focus.
 	 */
-	protected void deactivate() {
+	public void deactivate() {
 		_listenerManager.handleEvent(new WindowEvent(this, WindowEvent.DEACTIVATED));
 	}
 
 	/**
 	 * The method is called, if the window is closed.
 	 */
-	protected void closed() {
+	public void closed() {
 		_closed = true;
 		_listenerManager.handleEvent(new WindowEvent(this, WindowEvent.CLOSED));
 	}

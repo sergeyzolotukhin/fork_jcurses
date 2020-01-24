@@ -1,6 +1,6 @@
 package jcurses.event;
 
-import jcurses.widgets.Window;
+import jcurses.widgets.window.Window;
 /**
 * Instances of this class are generated, if the status of a window is modified.
 * for example, if an window is closed. 

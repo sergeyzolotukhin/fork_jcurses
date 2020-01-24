@@ -124,9 +124,9 @@ public class CheckBox extends Widget {
 	
 	
 	private static InputChar __changeStatusChar = new InputChar(' ');
-	
-	
-	protected boolean handleInput(InputChar ch) {
+
+
+	public boolean handleInput(InputChar ch) {
 		if (ch.equals(__changeStatusChar)) {
 			setValue((_checked)?false:true);
 			paint();

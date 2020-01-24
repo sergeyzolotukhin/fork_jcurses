@@ -170,9 +170,9 @@ public class Button extends Widget {
 	
 	
 	private static InputChar __actionChar = new InputChar('\n');
-	
-	
-	protected boolean handleInput(InputChar ch) {
+
+
+	public boolean handleInput(InputChar ch) {
 		if ((ch.equals(__actionChar))||
 		    ((getShortCut()!=null) && (getShortCut().equals(ch)))) {
 			doAction();

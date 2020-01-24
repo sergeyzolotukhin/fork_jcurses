@@ -806,7 +806,7 @@ public class List extends Widget implements IScrollable {
 	}
 
 
-	protected boolean handleInput(InputChar ch) {
+	public boolean handleInput(InputChar ch) {
 
 		int backupStartIndex = _startIndex;
 		int backupTrackedIndex = _trackedIndex;

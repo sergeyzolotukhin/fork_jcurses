@@ -549,7 +549,7 @@ public class TextComponent extends Widget {
 	}
 
 
-	protected boolean handleInput(InputChar ch) {
+	public boolean handleInput(InputChar ch) {
 
 		int bCursorPosX = _cursPosX;
 		int bCursorPosY = _cursPosY;

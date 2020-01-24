@@ -15,6 +15,7 @@ public class MenuList extends List {
 
 	/**
 	 * Adds a separator at the specified position
+	 *
 	 * @param index position to add a separator
 	 */
 	public void addSeparator(int index) {
@@ -30,7 +31,7 @@ public class MenuList extends List {
 	}
 
 
-	protected boolean handleInput(InputChar ch) {
+	public boolean handleInput(InputChar ch) {
 		if (!ch.equals(getChangeStatusChar())) {
 			return super.handleInput(ch);
 		}
@@ -53,6 +54,7 @@ public class MenuList extends List {
 
 	/**
 	 * Returns the text used by painting separators
+	 *
 	 * @return separator string
 	 */
 	public String getSeparatorString() {
@@ -62,6 +64,7 @@ public class MenuList extends List {
 
 	/**
 	 * Sets the text to use by painting separators
+	 *
 	 * @param value separator string
 	 */
 	public void setSeparatorString(String value) {

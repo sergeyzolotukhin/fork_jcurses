@@ -10,6 +10,9 @@ import jcurses.widgets.*;
 import jcurses.util.*;
 
 import jcurses.event.*;
+import jcurses.widgets.window.FileDialog;
+import jcurses.widgets.window.Message;
+import jcurses.widgets.window.Window;
 
 
 public class Test extends Window implements ItemListener, ActionListener, ValueChangedListener, WindowListener, WidgetsConstants {
