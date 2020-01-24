@@ -3,9 +3,9 @@ package jcurses.widgets.window;
 
 import jcurses.widgets.Widget;
 import jcurses.widgets.container.Panel;
-import jcurses.event.WindowEvent;
-import jcurses.event.WindowListener;
-import jcurses.event.WindowListenerManager;
+import jcurses.event.window.WindowEvent;
+import jcurses.event.window.WindowListener;
+import jcurses.event.window.WindowListenerManager;
 import jcurses.system.CharColor;
 import jcurses.system.InputChar;
 import jcurses.system.Toolkit;

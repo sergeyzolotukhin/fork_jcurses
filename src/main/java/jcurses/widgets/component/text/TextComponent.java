@@ -3,9 +3,9 @@ package jcurses.widgets.component.text;
 
 import java.util.ArrayList;
 
-import jcurses.event.ValueChangedListener;
-import jcurses.event.ValueChangedListenerManager;
-import jcurses.event.ValueChangedEvent;
+import jcurses.event.value.ValueChangedListener;
+import jcurses.event.value.ValueChangedListenerManager;
+import jcurses.event.value.ValueChangedEvent;
 import jcurses.system.Toolkit;
 import jcurses.system.CharColor;
 import jcurses.system.InputChar;

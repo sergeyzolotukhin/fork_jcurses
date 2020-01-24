@@ -4,9 +4,9 @@ package jcurses.widgets.component.menu;
 
 import java.util.Vector;
 
-import jcurses.event.ItemListenerManager;
-import jcurses.event.ItemListener;
-import jcurses.event.ItemEvent;
+import jcurses.event.item.ItemListenerManager;
+import jcurses.event.item.ItemListener;
+import jcurses.event.item.ItemEvent;
 
 import jcurses.system.CharColor;
 import jcurses.system.InputChar;

@@ -1,6 +1,14 @@
 package jcurses.tests;
 
 
+import jcurses.event.action.ActionEvent;
+import jcurses.event.action.ActionListener;
+import jcurses.event.item.ItemEvent;
+import jcurses.event.item.ItemListener;
+import jcurses.event.value.ValueChangedEvent;
+import jcurses.event.value.ValueChangedListener;
+import jcurses.event.window.WindowEvent;
+import jcurses.event.window.WindowListener;
 import jcurses.widgets.component.Button;
 import jcurses.widgets.component.CheckBox;
 import jcurses.widgets.component.Label;
@@ -14,9 +22,6 @@ import jcurses.system.*;
 
 import jcurses.widgets.*;
 
-import jcurses.util.*;
-
-import jcurses.event.*;
 import jcurses.widgets.window.file.FileDialog;
 import jcurses.widgets.window.Message;
 import jcurses.widgets.window.Window;

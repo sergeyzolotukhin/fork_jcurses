@@ -1,7 +1,7 @@
 package jcurses.widgets.window;
 
-import jcurses.event.ActionEvent;
-import jcurses.event.ActionListener;
+import jcurses.event.action.ActionEvent;
+import jcurses.event.action.ActionListener;
 import jcurses.widgets.component.Button;
 import jcurses.widgets.component.Label;
 import jcurses.layout.DefaultLayoutManager;
@@ -86,7 +86,7 @@ public class Message extends Dialog implements ActionListener {
 	}
 
 	/**
-	 * Required for implementing <code>jcurses.event.ActionListener</code>
+	 * Required for implementing <code>jcurses.event.action.ActionListener</code>
 	 */
 	public void actionPerformed(ActionEvent event) {
 		close();

@@ -1,8 +1,8 @@
 package jcurses.widgets.component;
 
-import jcurses.event.ActionListenerManager;
-import jcurses.event.ActionListener;
-import jcurses.event.ActionEvent;
+import jcurses.event.action.ActionListenerManager;
+import jcurses.event.action.ActionListener;
+import jcurses.event.action.ActionEvent;
 
 import jcurses.system.CharColor;
 import jcurses.system.InputChar;

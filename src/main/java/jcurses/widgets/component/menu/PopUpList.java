@@ -1,8 +1,8 @@
 package jcurses.widgets.component.menu;
 
-import jcurses.event.ValueChangedEvent;
-import jcurses.event.ValueChangedListener;
-import jcurses.event.ValueChangedListenerManager;
+import jcurses.event.value.ValueChangedEvent;
+import jcurses.event.value.ValueChangedListener;
+import jcurses.event.value.ValueChangedListenerManager;
 import jcurses.system.CharColor;
 import jcurses.system.InputChar;
 import jcurses.system.Toolkit;

@@ -1,7 +1,7 @@
 package jcurses.widgets.window;
 
-import jcurses.event.WindowEvent;
-import jcurses.event.WindowListener;
+import jcurses.event.window.WindowEvent;
+import jcurses.event.window.WindowListener;
 
 /**
  * This class implements a modal dialog. The diffirence to a normal window is, that
