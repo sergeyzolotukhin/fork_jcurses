@@ -72,6 +72,7 @@ public class Window {
 		_root.setX(x1);
 		_root.setY(y1);
 		_root.setWindow(this);
+
 		WindowManager.createWindow(this);
 	}
 
