@@ -7,10 +7,7 @@ import jcurses.util.Rectangle;
 /**
  * This class implements a panel with a border.
  */
-
-
 public class BorderPanel extends Panel {
-
 	private CharColor _colors = getDefaultBorderColors();
 	private static CharColor __defaultBorderColors = new CharColor(CharColor.WHITE, CharColor.BLACK);
 
@@ -55,6 +52,4 @@ public class BorderPanel extends Panel {
 
 		return rect;
 	}
-
-
 }
