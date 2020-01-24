@@ -95,6 +95,9 @@ public class Toolkit {
 
 	private static String getLibraryPath() {
 		String url = ClassLoader.getSystemClassLoader().getResource("jcurses/system/Toolkit.class").toString();
+
+		System.out.println("URL:" + url);
+
 		url = url.trim();
 		if (url.startsWith("jar:file:")) {
 			url = url.substring("jar:file:".length(), url.length());

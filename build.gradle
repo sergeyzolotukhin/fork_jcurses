@@ -24,6 +24,14 @@ java {
     withSourcesJar()
 }
 
+jar {
+    archiveName = "jcurses"
+}
+
+sourcesJar {
+    archiveName = "jcurses-sources"
+}
+
 artifacts {
     archives jar
     archives sourcesJar
